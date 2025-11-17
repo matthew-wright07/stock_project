@@ -76,8 +76,7 @@ export default function Home(){
           null
           }
         </div>
-        <div className='py-4 flex flex-col gap-4'>
-          <h1 className='font-bold text-white text-2xl'>News{stockName.length>0?` for ${stockName}`:null}</h1>
+        <div className='py-4 flex flex-col gap-4 items-center'>
           <div className='grid grid-cols-2 gap-4'>
             {news.map((current,index)=>{
               return (
@@ -91,6 +90,7 @@ export default function Home(){
               )
             })}
           </div>
+          {news.length<1?<p className='text-white text-lg'>No Data On That Stock Symbol</p>:null}
         </div>
     </div>
     </>
