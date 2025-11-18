@@ -20,7 +20,7 @@ export default function Chart({data,dataKeys,labelValues}){
     return null;
     };
     return (
-        <ResponsiveContainer width="50%" height={300}>
+        <ResponsiveContainer width="100%" height={300}>
             <BarChart  data={data}>
                 <XAxis
                 dataKey={dataKeys[0]}

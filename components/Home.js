@@ -56,15 +56,15 @@ export default function Home(){
   return (
     <>
     {!loading?
-    <div className='flex flex-col gap-4 px-24 py-8 items-center justify-center'>
+    <div className='flex flex-col gap-4 px-16 lg:px-24 py-8 items-center justify-center'>
       <>
       <div className='flex flex-col items-center justify-center gap-8 w-full'>
-        <div className='flex flex-col items-center w-1/2 text-center gap-4 h-[40vh] justify-center'>
+        <div className='flex flex-col items-center text-center gap-4 h-[40vh] justify-center'>
           <h1 className='font-bold text-3xl text-white'>Search For A Stock To Analyze</h1>
           <p className='text-white'>See stock prices, news, financials, forecasts, charts and more with just a stock symbol.</p>
           <input onKeyDown={handleKey} onChange={handleChange} value={stock} placeholder='Search for a stock symbol' className='text-white border border-white rounded-lg w-1/2 h-12 p-4'/>
         </div>
-        <div className='flex justify-between h-full w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 h-full w-full'>
           {quarterly.length > 0?
           <Chart data={quarterly} dataKeys={["quarter","actual"]} labelValues={["Quarter #","Earning Per Share"]}/>
           :
@@ -77,7 +77,7 @@ export default function Home(){
           }
         </div>
         <div className='py-4 flex flex-col gap-4 items-center'>
-          <div className='grid grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
             {news.map((current,index)=>{
               return (
               current.image!=="https://static2.finnhub.io/file/publicdatany/finnhubimage/market_watch_logo.png" && index>news.length-20?
